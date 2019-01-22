@@ -19,6 +19,6 @@ namespace EjercicioLINQ
             Nombre = nombre;
             Apellido = apellido;
         }
-
+       
     }
 }

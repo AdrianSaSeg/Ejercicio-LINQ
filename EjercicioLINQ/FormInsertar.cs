@@ -15,9 +15,9 @@ namespace EjercicioLINQ
         public BindingList<Estudiantes> _Estudiantes { get; set; }
         public DataGridView _datagrid { get; set; }
 
-        public FormInsertar(BindingList<Estudiantes> estudiantes, DataGridView datagrid)
+        public FormInsertar(BindingList<Estudiantes> lista_estudiantes, DataGridView datagrid)
         {
-            _Estudiantes = estudiantes;
+            _Estudiantes = lista_estudiantes;
             _datagrid = datagrid;
             InitializeComponent();
         }
