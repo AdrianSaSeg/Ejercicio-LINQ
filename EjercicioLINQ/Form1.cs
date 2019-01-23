@@ -26,10 +26,11 @@ namespace EjercicioLINQ
 
             dataGridView1.DataSource = lista_estudiantes;
 
-            foreach (var item in lista_estudiantes)
+            //establecemos como opciones del combobox las propiedades de nuestra lista 
+            foreach (DataGridViewColumn item in dataGridView1.Columns)
             {
-                comboBox1.Items.Add(item);
-            }           
+                comboBox1.Items.Add(item.Name);
+            }
         }
 
         private void botonInsertar_Click(object sender, EventArgs e)
