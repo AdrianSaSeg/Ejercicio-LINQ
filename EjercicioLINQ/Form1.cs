@@ -42,21 +42,18 @@ namespace EjercicioLINQ
         private void botonFiltrar_Click(object sender, EventArgs e)
         {
             int año = Convert.ToInt32(textBox1.Text);
+                      
+             ////////////USANDO LINQ PARA FILTRAR////////////
+             var filtro = from x in lista_estudiantes
+                          where x.Edad < año
+                          orderby x.Edad
+                          select x;
 
-            foreach (var item in lista_estudiantes)
-            {
-                /////////OTRA FORMA DE HACERLO/////////////
-                //var filtro = lista_estudiantes.Where(x => x.Edad < año).ToList();
+             dataGridView1.DataSource = filtro.ToList();
 
-                ////////////USANDO LINQ PARA FILTRAR////////////
-                var filtro = from x in lista_estudiantes
-                             where x.Edad < año
-                             orderby x.Edad
-                             select x;
+            /////////OTRA FORMA DE HACERLO/////////////
+            //var filtro = lista_estudiantes.Where(x => x.Edad < año).ToList();
 
-                dataGridView1.DataSource = filtro.ToList();
-            }
-            
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
