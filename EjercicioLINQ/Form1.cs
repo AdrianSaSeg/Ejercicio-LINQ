@@ -45,9 +45,16 @@ namespace EjercicioLINQ
 
             foreach (var item in lista_estudiantes)
             {
-                var filtro = lista_estudiantes.Where(x => x.Edad < año).ToList();
+                /////////OTRA FORMA DE HACERLO/////////////
+                //var filtro = lista_estudiantes.Where(x => x.Edad < año).ToList();
 
-                dataGridView1.DataSource = filtro;
+                ////////////USANDO LINQ PARA FILTRAR////////////
+                var filtro = from x in lista_estudiantes
+                             where x.Edad < año
+                             orderby x.Edad
+                             select x;
+
+                dataGridView1.DataSource = filtro.ToList();
             }
             
         }
